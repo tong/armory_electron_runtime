@@ -1,0 +1,30 @@
+{
+    "name": "armory_html5_player",
+    "version": "0.0.0",
+    "license": "MIT",
+    "description": "",
+    "productName": "armory_html5_player",
+    "repository": "https://github.com/tong/armory_html5_player",
+    "main": "main.js",
+    "scripts": {
+        "clean": "rm -rf build/ && rm -f main.js*",
+        "build": "haxe build.hxml",
+        "pack:darwin": "electron-packager ./ armory_html5_player --platform=darwin --arch=x64 --out build --overwrite --icon=icon.icns --protocol=armory_html5_player --ignore='TODO|build/|release/|src/|style/'",
+        "pack:linux": "electron-packager ./ armory_html5_player --platform=linux --arch=x64 --out build --overwrite --icon=icon.png --protocol=armory_html5_player --ignore='TODO|build/|release|src/|style/'",
+        "pack": "npm run pack:darwin && npm run pack:linux",
+        "zip:darwin": "cd build/armory_html5_player-darwin-x64 && zip -yr ../armory_html5_player-darwin-x64.zip armory_html5_player.app",
+        "zip:linux": "cd build && zip -yr armory_html5_player-linux-x64.zip armory_html5_player-linux-x64",
+        "release": "npm run clean && npm run build && npm run pack && npm run zip:darwin && npm run zip:linux",
+        "start": "electron ."
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "electron": "22.0.0",
+        "electron-packager": "^17.1.1"
+    },
+    "ignore": [
+        "/node_modules/*",
+        ".gitignore"
+    ]
+}

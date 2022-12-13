@@ -1,0 +1,9 @@
+-js main.js
+-main armory.html5.Player
+-cp src
+-lib electron
+-dce full
+-D aeb_main
+-D analyzer-optimize
+-D js-es=6
+-debug
