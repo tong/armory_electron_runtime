@@ -9,13 +9,17 @@
     "scripts": {
         "clean": "rm -rf build/ && rm -f main.js*",
         "build": "haxe build.hxml",
-        "pack:darwin": "electron-packager ./ armory_html5_player --platform=darwin --arch=x64 --out build --overwrite --icon=icon.icns --protocol=armory_html5_player --ignore='TODO|build/|release/|src/|style/'",
+        "start": "electron .",
         "pack:linux": "electron-packager ./ armory_html5_player --platform=linux --arch=x64 --out build --overwrite --icon=icon.png --protocol=armory_html5_player --ignore='TODO|build/|release|src/|style/'",
-        "pack": "npm run pack:darwin && npm run pack:linux",
-        "zip:darwin": "cd build/armory_html5_player-darwin-x64 && zip -yr ../armory_html5_player-darwin-x64.zip armory_html5_player.app",
+        "pack:darwin": "electron-packager ./ armory_html5_player --platform=darwin --arch=x64 --out build --overwrite --icon=icon.png --protocol=armory_html5_player --ignore='TODO|build/|release/|src/|style/'",
+        "pack:windows": "electron-packager ./ armory_html5_player --platform=win32 --arch=x64 --out build --overwrite --icon=icon.png --protocol=armory_html5_player --ignore='TODO|build/|release|src/|style/'",
+        "install:linux": "mkdir -p $ARMSDK/Player && cp -r build/armory_html5_player-linux-x64 $ARMSDK/Player/electron",
+        "install:darwin": "mkdir -p $ARMSDK/Player && cp -r build/armory_html5_player-darwin-x64 $ARMSDK/Player/electron",
+        "install:windows": "mkdir -p $ARMSDK/Player && cp -r build/armory_html5_player-windows-x64 $ARMSDK/Player/electron",
         "zip:linux": "cd build && zip -yr armory_html5_player-linux-x64.zip armory_html5_player-linux-x64",
-        "release": "npm run clean && npm run build && npm run pack && npm run zip:darwin && npm run zip:linux",
-        "start": "electron ."
+        "zip:darwin": "cd build/armory_html5_player-darwin-x64 && zip -yr ../armory_html5_player-darwin-x64.zip armory_html5_player.app",
+        "zip:windows": "cd build && zip -yr armory_html5_player-windows-x64.zip armory_html5_player-windows-x64",
+        "release": "npm run clean && npm run build && npm run pack && npm run zip:linux && npm run zip:darwin && npm run zip:windows"
     },
     "dependencies": {
     },

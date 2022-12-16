@@ -1,5 +1,5 @@
 -js main.js
--main armory.html5.Player
+-main armory.player.ElectronMain
 -cp src
 -lib electron
 -dce full
