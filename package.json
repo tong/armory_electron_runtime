@@ -1,18 +1,19 @@
 {
-    "name": "armory_html5_player",
-    "version": "0.0.0",
+    "name": "armory-electron-runtime",
+    "version": "0.0.1",
     "license": "MIT",
     "description": "",
-    "productName": "armory_html5_player",
-    "repository": "https://github.com/tong/armory_html5_player",
+    "productName": "armory-electron-runtime",
+    "repository": "https://github.com/tong/armory_electron_runtime",
     "main": "main.js",
     "scripts": {
-        "clean": "rm -rf electron_runtime*/ && rm -f app/main.js*",
+        "clean": "rm -rf armory-electron-runtime-*/ && rm -f app/main.js*",
         "build": "haxe build.hxml",
         "start": "electron app",
-        "pack:linux": "electron-packager app electron-runtime --platform=linux --arch=x64 --out ./ --overwrite --icon=icon.png --protocol=armory-electron-runtime",
-        "pack:darwin": "electron-packager app electron-runtime --platform=darwin --arch=x64 --out ./ --overwrite --icon=icon.png --protocol=armory-electron-runtime",
-        "pack:win32": "electron-packager app electron-runtime --platform=win32 --arch=x64 --out ./ --overwrite --icon=icon.ico --protocol=armory-electron-runtime"
+        "pack:linux": "electron-packager app --platform=linux --arch=x64 --out ./ --overwrite --icon=icon.png --protocol=armory-electron",
+        "pack:darwin": "electron-packager app --platform=darwin --arch=x64 --out ./ --overwrite --icon=icon.png --protocol=armory-electron",
+        "pack:win32": "electron-packager app --platform=win32 --arch=x64 --out ./ --overwrite --icon=app/icon.ico --protocol=armory-electron",
+        "pack": "electron-packager app armory-electron-runtime --all --out ./ --overwrite --icon=app/icon.png --protocol=armory-electron"
     },
     "dependencies": {
     },

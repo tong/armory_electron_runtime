@@ -1,5 +1,5 @@
 app/*.js
 app/*.js.map
-electron-runtime-*/
+armory-electron-runtime-*/
 node_modules/
 
