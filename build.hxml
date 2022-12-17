@@ -1,9 +1,8 @@
--js main.js
--main armory.player.ElectronMain
+-js app/main.js
+-main armory.runtime.ElectronRuntime
 -cp src
 -lib electron
 -dce full
--D aeb_main
+-D electron_main
 -D analyzer-optimize
 -D js-es=6
--debug

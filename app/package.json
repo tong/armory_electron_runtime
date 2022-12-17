@@ -1,0 +1,13 @@
+{
+    "name": "armory-electron-runtime",
+    "version": "0.0.0",
+    "description": "Armory electron runtime",
+    "license": "ISC",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^22.0.0"
+    }
+}

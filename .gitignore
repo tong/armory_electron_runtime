@@ -1,5 +1,5 @@
-build/
+app/*.js
+app/*.js.map
+electron-runtime-*/
 node_modules/
-*.js
-*.js.map
 

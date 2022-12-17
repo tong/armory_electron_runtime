@@ -3,24 +3,32 @@
 Electron based player and html5 debug runtime for armory.
 
 
-## Build + Install
+## Build
 
-Make sure `$ARMSDK` variable is set and run:
 ```sh
-npm install
-npm run build
+haxelib install build.hxml # Install haxelib dependencies
+npm install # Install node packages
+npm run build # Build main process js
 npm run pack:linux # linux|darwin|windows
-npm run install:linux # linux|darwin|windows
 ```
-Player is now installed at `$ARMSDK/Player/electron`
 
 
 ## Usage
 
-Set the command to use for launching the html5 player:
+Set the custom launch command for the html5 player (change `os` and `arch` to your machine):   
 ```sh
-export ARMORY_PLAY_HTML5='$ARMSDK/Player/electron/armory_html5_player $ARMSDK/Player/electron/ --window ${width}x${height} $dir/debug/html5/index.html'
+export ARMORY_PLAY_HTML5='/<absolute-path-to-this-repo>/electron-runtime-linux-x64/electron-runtime --devtools --window ${width}x${height} ${dir}/debug/html5/index.html'`
 ```
 
-Start your project in blender and hit `Play` using the `Browser` player.
+Use an absolute path to the executeable if it's not in your `PATH`.  
+If you want to have this permanently put it somewhere like `.zshrc` or `.bashrc`.  
+Start blender and `Play` the `Browser` target.
+
+The (X) window class name is `armory-electron-runtime` if you want to apply some custom settings.
+
+
+## Flags
+
+- `--devtools` Open devtools when application starts
+- `--window ${width}x${height}` Window width, height
 
