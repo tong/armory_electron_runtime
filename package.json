@@ -15,8 +15,6 @@
         "pack:win32": "electron-packager app --platform=win32 --arch=x64 --out ./ --overwrite --icon=app/icon.ico --protocol=armory-electron",
         "pack": "electron-packager app armory-electron-runtime --all --out ./ --overwrite --icon=app/icon.png --protocol=armory-electron"
     },
-    "dependencies": {
-    },
     "devDependencies": {
         "electron": "22.0.0",
         "electron-packager": "^17.1.1"

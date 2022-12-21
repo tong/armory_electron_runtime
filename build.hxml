@@ -1,8 +1,10 @@
 -js app/main.js
 -main armory.runtime.ElectronRuntime
--cp src
+--macro exclude("armory.trait")
+-cp Sources
 -lib electron
 -dce full
 -D electron_main
+-D arm_electron
 -D analyzer-optimize
 -D js-es=6

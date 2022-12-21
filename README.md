@@ -6,10 +6,23 @@ Electron based player and html5 debug runtime for armory.
 ## Build
 
 ```sh
-haxelib install build.hxml # Install haxelib dependencies
-npm install # Install node packages
-npm run build # Build main process js
-npm run pack:linux # linux|darwin|windows
+git clone https://github.com/tong/armory_electron_runtime.git
+cd armory_electron_runtime
+
+# Install haxelib dependencies
+haxelib install build.hxml
+
+# Install application dependencies
+cd app && npm install && cd ..
+
+# Install project dependencies
+npm install
+
+# Build main process js
+npm run build
+
+# linux|darwin|windows
+npm run pack:linux
 ```
 
 
@@ -31,8 +44,6 @@ For accessing the electron api from haxe add [hxelectron](https://github.com/ton
 ```sh
 project.addLibrary('electron');
 ```
-
-
 
 
 ### Logging
